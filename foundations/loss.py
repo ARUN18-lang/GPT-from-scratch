@@ -13,7 +13,7 @@ class Solution:
         n = len(y_true)
         epsilon = 1e-7
         for actual, predicted in zip(y_true, y_pred):
-            if actual == 1:
+            if actual:
                 Loss += actual * np.log(
                         predicted + epsilon
                     ) 

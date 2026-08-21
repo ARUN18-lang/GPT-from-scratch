@@ -3,6 +3,10 @@ from numpy.typing import NDArray
 
 
 class Solution:
+    # sigmoid and softmax produces output between [0-1], then why not sigmoid instead of softmax.
+    # Sigmoid handles independent binary choices. Softmax handles mutually exclusive multi-class choices by forcing all output scores to add up to exactly 1
+    # example -> sigmoid produces 0 or 1 binary choices, softmax produces list of probs, the one with higher probs wins 
+    # probs = [0.2, 0.6, 0.1, 0.1] - max(probs) = 0.6
 
     def temperature(self, probs: NDArray[np.float64], T: float) -> NDArray[np.float64]:
         maxi = max(probs)
